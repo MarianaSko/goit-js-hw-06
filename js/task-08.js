@@ -19,14 +19,15 @@ const passwordInputEl = document.querySelector('[name="password"]');
 
 loginFormEl.addEventListener('submit', event => {
     event.preventDefault();
-    for (const input of [...loginFormInputEls]) {
-        if (input.value === '') {
-            alert('All fields have to be filled');
-            break;
-        }
+
+    if ([...loginFormInputEls][0].value === '' || [...loginFormInputEls][1].value === '') {
+        alert('All fields have to be filled');
+    } else {
+        inputValuesObject.email = emailInputEl.value;
+        inputValuesObject.password = passwordInputEl.value;
+        console.log(inputValuesObject);
     }
-    inputValuesObject.email = emailInputEl.value;
-    inputValuesObject.password = passwordInputEl.value;
-    console.log(inputValuesObject);
+
+
     loginFormEl.reset();
 })

@@ -10,7 +10,8 @@
 const validationInputEl = document.querySelector('#validation-input');
 
 validationInputEl.addEventListener('blur', () => {
-    if (validationInputEl.value.length < validationInputEl.dataset.length) {
+    if (validationInputEl.value.length < validationInputEl.dataset.length || validationInputEl.value.length > validationInputEl.dataset.length) {
+        validationInputEl.classList.remove('valid');
         validationInputEl.classList.add('invalid');
     } else if (validationInputEl.classList.contains('invalid')) {
         validationInputEl.classList.remove('invalid');
