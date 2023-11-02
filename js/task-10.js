@@ -29,8 +29,12 @@ let pixelSize = 20;
 let amount = 0;
 
 function createBoxes(amount) {
+
+
   amount = inputEl.value;
   dataCreateBtnEl.addEventListener('click', () => {
+
+
     for (let i = 0; i < amount; i += 1) {
       const boxEl = document.createElement('div');
       boxEl.style.backgroundColor = getRandomHexColor();
@@ -39,8 +43,10 @@ function createBoxes(amount) {
       boxEl.style.height = pixelSize + 'px';
       boxesEl.append(boxEl);
 
-    }
 
+    }
+    inputEl.value = '';
+    amount = 0;
 
   })
 }
